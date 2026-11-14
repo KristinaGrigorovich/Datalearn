@@ -1,0 +1,94 @@
+<mxfile host="Electron" agent="ChatGPT">
+  <diagram id="data-architecture" name="Data Architecture">
+    <mxGraphModel dx="1561" dy="961" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=24;fontStyle=1;fontColor=#17324D;" value="АРХИТЕКТУРА АНАЛИТИЧЕСКОЙ ПЛАТФОРМЫ" vertex="1">
+          <mxGeometry height="45" width="1000" x="300" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="source" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF3FF;strokeColor=#4A86C5;strokeWidth=2;verticalAlign=top;spacingTop=18;fontSize=17;fontColor=#17324D;" value="&lt;b&gt;1. SOURCE LAYER&lt;/b&gt;" vertex="1">
+          <mxGeometry height="590" width="300" x="45" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="etl" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF4DF;strokeColor=#D6A344;strokeWidth=2;verticalAlign=top;spacingTop=18;fontSize=17;fontColor=#60420D;" value="&lt;b&gt;2. ETL / PROCESSING&lt;/b&gt;" vertex="1">
+          <mxGeometry height="590" width="300" x="405" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="storage" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF7EF;strokeColor=#5B9B73;strokeWidth=2;verticalAlign=top;spacingTop=18;fontSize=17;fontColor=#194D2D;" value="&lt;b&gt;3. STORAGE LAYER&lt;/b&gt;" vertex="1">
+          <mxGeometry height="590" width="420" x="765" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="business" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3EDFA;strokeColor=#9270B5;strokeWidth=2;verticalAlign=top;spacingTop=18;fontSize=17;fontColor=#4A3265;" value="&lt;b&gt;4. BUSINESS LAYER&lt;/b&gt;" vertex="1">
+          <mxGeometry height="590" width="310" x="1245" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="db" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7EA6D2;fontSize=15;spacing=12;" value="&lt;b&gt;OLTP базы данных&lt;/b&gt;&lt;br&gt;PostgreSQL • MySQL&lt;br&gt;&lt;font color=&quot;#526579&quot;&gt;Интернет-магазин, CRM&lt;/font&gt;" vertex="1">
+          <mxGeometry height="105" width="240" x="75" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="api" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7EA6D2;fontSize=15;spacing=12;" value="&lt;b&gt;Внешние API&lt;/b&gt;&lt;br&gt;Рекламные кабинеты&lt;br&gt;Курсы валют и сервисы" vertex="1">
+          <mxGeometry height="105" width="240" x="75" y="355" as="geometry" />
+        </mxCell>
+        <mxCell id="files" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7EA6D2;fontSize=15;spacing=12;" value="&lt;b&gt;Файлы и логи&lt;/b&gt;&lt;br&gt;Excel • CSV • логи сайта" vertex="1">
+          <mxGeometry height="105" width="240" x="75" y="505" as="geometry" />
+        </mxCell>
+        <mxCell id="extract" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6A344;fontSize=15;spacing=10;" value="&lt;b&gt;Извлечение&lt;/b&gt;&lt;br&gt;Забор данных из источников" vertex="1">
+          <mxGeometry height="80" width="230" x="440" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="transform" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6A344;fontSize=15;spacing=10;" value="&lt;b&gt;Очистка и преобразование&lt;/b&gt;&lt;br&gt;Проверка качества • нормализация&lt;br&gt;Объединение данных" vertex="1">
+          <mxGeometry height="110" width="230" x="440" y="355" as="geometry" />
+        </mxCell>
+        <mxCell id="load" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6A344;fontSize=15;spacing=10;" value="&lt;b&gt;Загрузка и оркестрация&lt;/b&gt;&lt;br&gt;Python • Apache Airflow&lt;br&gt;Облачная интеграция" vertex="1">
+          <mxGeometry height="100" width="230" x="440" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="staging" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5B9B73;fontSize=16;spacing=12;" value="&lt;b&gt;STAGING — сырой слой&lt;/b&gt;&lt;br&gt;Точные копии данных из источников&lt;br&gt;Без бизнес-преобразований" vertex="1">
+          <mxGeometry height="130" width="350" x="800" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="dwh" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5B9B73;fontSize=16;spacing=12;" value="&lt;b&gt;DATA WAREHOUSE&lt;/b&gt;&lt;br&gt;Очищенные и структурированные данные&lt;br&gt;Единая аналитическая модель" vertex="1">
+          <mxGeometry height="120" width="350" x="800" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="marts" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5B9B73;fontSize=15;spacing=10;" value="&lt;b&gt;DATA MARTS — витрины&lt;/b&gt;&lt;br&gt;Продажи • Клиенты • Маркетинг&lt;br&gt;Готовые наборы для аналитики" vertex="1">
+          <mxGeometry height="100" width="350" x="800" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="bi" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9270B5;fontSize=16;spacing=12;" value="&lt;b&gt;BI-инструменты&lt;/b&gt;&lt;br&gt;Power BI • Tableau&lt;br&gt;Excel • Superset" vertex="1">
+          <mxGeometry height="120" width="240" x="1280" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="users" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9270B5;fontSize=15;spacing=12;align=left;" value="&lt;b&gt;Конечные пользователи&lt;/b&gt;&lt;br&gt;&lt;br&gt;👩‍💼 Бизнес-аналитики&lt;br&gt;👨‍💼 Руководители&lt;br&gt;📣 Маркетологи" vertex="1">
+          <mxGeometry height="175" width="240" x="1280" y="405" as="geometry" />
+        </mxCell>
+        <mxCell id="reports" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E7DDF3;strokeColor=#9270B5;fontSize=15;fontStyle=1;" value="Отчёты • Дашборды • KPI" vertex="1">
+          <mxGeometry height="55" width="240" x="1280" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="db" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#54718F;" target="extract">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="api" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#54718F;" target="extract">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="files" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#54718F;" target="extract">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="extract" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#B8872D;fontSize=11;" target="transform" value="поток данных">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="transform" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#B8872D;" target="load">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="load" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#5B9B73;fontSize=11;" target="staging" value="загрузка">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="staging" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#5B9B73;" target="dwh">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="dwh" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#5B9B73;" target="marts">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="marts" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#9270B5;fontSize=11;" target="bi" value="аналитические данные">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="bi" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#9270B5;" target="users">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="users" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#9270B5;" target="reports">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
